@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NHibernate" Version="5.2.6" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.112" />
+
+    <!-- Add non-code embedded resources -->
+    <EmbeddedResource Include="Entities/*.hbm.xml" />
+  </ItemGroup>
+
+</Project>
