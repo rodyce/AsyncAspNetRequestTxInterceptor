@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using NHibernate.Cfg;
+using Repositories;
 
 namespace Extensions
 {
@@ -14,6 +15,8 @@ namespace Extensions
     
             services.AddSingleton(sessionFactory);
             services.AddScoped(factory => sessionFactory.OpenSession());
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped(typeof(NaturalPersonRepository));
     
             return services;
         }

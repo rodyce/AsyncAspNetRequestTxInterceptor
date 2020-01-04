@@ -27,6 +27,8 @@ namespace AsyncAspNetRequestTxInterceptor
             Console.WriteLine($"Configuring {Assembly.GetExecutingAssembly().FullName}");
             services.AddRazorPages();
             services.AddNHibernate("");
+            services.AddControllers();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +51,7 @@ namespace AsyncAspNetRequestTxInterceptor
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
         }
